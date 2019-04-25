@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  tokenName = 'current_user';
+  tokenName = environment.tokenName;
 
   constructor(private helper: JwtHelperService) {
     this.helper = new JwtHelperService();
@@ -16,7 +17,11 @@ export class AuthService {
   }
 
   GetCurrentUser() {
-    return JSON.parse(localStorage.getItem(this.tokenName));
+    const currentUser = localStorage.getItem(this.tokenName);
+    if (currentUser != null) {
+      return JSON.parse(localStorage.getItem(this.tokenName));
+    }
+    return null;
   }
 
   GetToken() {
