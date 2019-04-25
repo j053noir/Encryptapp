@@ -1,3 +1,146 @@
-<p>
-  sign-up works!
-</p>
+<section class="d-flex justify-content-center">
+  <form
+    class="sign-up align-self-center"
+    [formGroup]="signUpForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <h1 class="text-center">Encryptapp</h1>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <div class="md-form">
+          <input
+            type="text"
+            mdbInput
+            class="form-control"
+            id="firstname"
+            formControlName="firstname"
+          />
+          <label for="firstname">Nombre</label>
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.firstname.errors?.required &&
+              (signUpForm.controls.firstname.dirty ||
+                signUpForm.controls.firstname.touched)
+            "
+            >Campo requerido.</mdb-error
+          >
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="md-form">
+          <input
+            type="text"
+            mdbInput
+            class="form-control"
+            id="lastname"
+            formControlName="lastname"
+          />
+          <label for="lastname">Apellido</label>
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.lastname.errors?.required &&
+              (signUpForm.controls.lastname.dirty ||
+                signUpForm.controls.lastname.touched)
+            "
+            >Campo requerido.</mdb-error
+          >
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="md-form">
+          <input
+            type="text"
+            mdbInput
+            class="form-control"
+            id="username"
+            formControlName="username"
+          />
+          <label for="username">Usuario</label>
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.username.errors?.required &&
+              (signUpForm.controls.username.dirty ||
+                signUpForm.controls.username.touched)
+            "
+            >Campo requerido.</mdb-error
+          >
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="md-form">
+          <input
+            type="password"
+            mdbInput
+            autocomplete="off"
+            class="form-control"
+            id="password"
+            formControlName="password"
+          /><label for="password">Contraseña</label>
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.required &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >Campo requerido.</mdb-error
+          >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.minlength &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >El campo debe tener al menos
+            <strong>8</strong> caracteres.</mdb-error
+          >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.digit &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >El campo debe tener al menos un (1) caracter
+            <strong>numérico</strong>.</mdb-error
+          >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.lowercase &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >El campo debe tener al menos un (1) caracter en
+            <strong>minúscula</strong>.</mdb-error
+          >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.uppercase &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >El campo debe tener al menos un (1) caracter en
+            <strong>mayúscula</strong>.</mdb-error
+          >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.special &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >El campo debe tener al menos un (1) caracter
+            <strong>especial</strong>.</mdb-error
+          >
+        </div>
+      </div>
+      <div class="col-12 text-center">
+        <button
+          mdbWavesEffect
+          type="submit"
+          class="btn btn-success"
+          [disabled]="!signUpForm.valid && submitting"
+        >
+          Crear Cuenta
+        </button>
+      </div>
+    </div>
+  </form>
+</section>
