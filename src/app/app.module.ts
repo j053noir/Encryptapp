@@ -1,4 +1,5 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { JwtModule } from '@auth0/angular-jwt';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
@@ -23,6 +24,8 @@ const jwtModuleOptions = {
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
     JwtModule.forRoot(jwtModuleOptions),
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],
