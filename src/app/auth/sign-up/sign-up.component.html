@@ -4,7 +4,7 @@
     [formGroup]="signUpForm"
     (ngSubmit)="onSubmit()"
   >
-    <h1 class="text-center">Encryptapp</h1>
+    <h1 class="text-center">Registro</h1>
     <div class="row">
       <div class="col-12 col-lg-6">
         <div class="md-form">
@@ -12,6 +12,7 @@
             type="text"
             mdbInput
             class="form-control"
+            maxLength="51"
             id="firstname"
             formControlName="firstname"
           />
@@ -24,6 +25,15 @@
             "
             >Campo requerido.</mdb-error
           >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.firstname.errors?.maxlength &&
+              (signUpForm.controls.firstname.dirty ||
+                signUpForm.controls.firstname.touched)
+            "
+            >El campo no puede tener más de
+            <strong>50</strong> caracteres</mdb-error
+          >
         </div>
       </div>
       <div class="col-12 col-lg-6">
@@ -32,6 +42,7 @@
             type="text"
             mdbInput
             class="form-control"
+            maxLength="51"
             id="lastname"
             formControlName="lastname"
           />
@@ -44,6 +55,16 @@
             "
             >Campo requerido.</mdb-error
           >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.lastname.errors?.maxlength &&
+              (signUpForm.controls.lastname.dirty ||
+                signUpForm.controls.lastname.touched)
+            "
+          >
+            El campo no puede tener más de
+            <strong>50</strong> caracteres</mdb-error
+          >
         </div>
       </div>
       <div class="col-12 col-lg-6">
@@ -52,6 +73,7 @@
             type="text"
             mdbInput
             class="form-control"
+            maxLength="51"
             id="username"
             formControlName="username"
           />
@@ -64,6 +86,15 @@
             "
             >Campo requerido.</mdb-error
           >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.username.errors?.maxlength &&
+              (signUpForm.controls.username.dirty ||
+                signUpForm.controls.username.touched)
+            "
+            >El campo no puede tener más de
+            <strong>50</strong> caracteres</mdb-error
+          >
         </div>
       </div>
       <div class="col-12 col-lg-6">
@@ -73,6 +104,7 @@
             mdbInput
             autocomplete="off"
             class="form-control"
+            maxLength="101"
             id="password"
             formControlName="password"
           /><label for="password">Contraseña</label>
@@ -83,6 +115,15 @@
                 signUpForm.controls.password.touched)
             "
             >Campo requerido.</mdb-error
+          >
+          <mdb-error
+            *ngIf="
+              signUpForm.controls.password.errors?.maxlength &&
+              (signUpForm.controls.password.dirty ||
+                signUpForm.controls.password.touched)
+            "
+            >Campo no puede tener mas
+            <strong>100</strong> caracteres.</mdb-error
           >
           <mdb-error
             *ngIf="
@@ -136,10 +177,16 @@
           mdbWavesEffect
           type="submit"
           class="btn btn-success"
-          [disabled]="!signUpForm.valid && submitting"
+          [disabled]="!signUpForm.valid || submitting"
         >
           Crear Cuenta
         </button>
+      </div>
+    </div>
+    <hr />
+    <div class="row">
+      <div class="col-12 text-center">
+        <a routerLink>Iniciar Sesión</a>
       </div>
     </div>
   </form>
