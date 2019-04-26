@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -26,6 +27,7 @@ const jwtModuleOptions = {
     JwtModule.forRoot(jwtModuleOptions),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent],

@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   tokenName: 'access_token',
+  apiUrl: 'localhost:5000/api',
 };
 
 /*
