@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { UsersComponent } from './features/users/users.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
@@ -29,6 +30,7 @@ const jwtModuleOptions = {
     SignUpComponent,
     HeaderComponent,
     DashboardComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,
