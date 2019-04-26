@@ -23,7 +23,7 @@ export class InSessionGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (!this.authService.GetCurrentUser()) {
+    if (!this.authService.getCurrentUser()) {
       return true;
     }
 
