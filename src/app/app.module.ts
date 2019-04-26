@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { DashboardComponent } from './home/dashboard/dashboard.component';
+import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './shared/http-interceptors/auth.interceptor';
 import { AuthService } from './shared/services/auth.service';
@@ -20,7 +22,14 @@ const jwtModuleOptions = {
 };
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, SignInComponent, SignUpComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    SignInComponent,
+    SignUpComponent,
+    HeaderComponent,
+    DashboardComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
