@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './shared/http-interceptors/auth.interceptor';
 import { AuthService } from './shared/services/auth.service';
 import { UtilsService } from './shared/services/utils.service';
+import { SignComponent } from './features/signature/sign/sign.component';
+import { VerifyComponent } from './features/signature/verify/verify.component';
 
 export function jwtTokenGetter() {
   return localStorage.getItem(environment.tokenName);
@@ -34,6 +36,8 @@ export function jwtTokenGetter() {
     UsersComponent,
     CypherComponent,
     SignatureComponent,
+    SignComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule,
