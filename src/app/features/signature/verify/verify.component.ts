@@ -58,7 +58,11 @@ export class VerifyComponent implements OnInit, OnDestroy {
       .verify(this.formVerify)
       .subscribe(
         (res: any) => {
-          alert(res.message);
+          if (res.data) {
+            alert('Exito, la firma es valida.');
+          } else {
+            alert('Fallo, El archivo y la firma no concuerdan.');
+          }
           this.submitting = false;
         },
         err => {
@@ -68,6 +72,7 @@ export class VerifyComponent implements OnInit, OnDestroy {
         }
       );
 
+    this.verifyForm.reset();
     this.formVerify = new FormData();
     this.fileName = 'Cargar archivo...';
   }

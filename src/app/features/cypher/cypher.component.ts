@@ -93,5 +93,6 @@ export class CypherComponent implements OnInit {
 
     this.form = new FormData();
     this.fileName = 'Cargar archivo...';
+    this.cypherForm.reset();
   }
 }

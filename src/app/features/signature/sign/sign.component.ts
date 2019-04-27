@@ -71,5 +71,6 @@ export class SignComponent implements OnInit, OnDestroy {
 
     this.formSign = new FormData();
     this.fileName = 'Cargar archivo...';
+    this.signatureForm.reset();
   }
 }
