@@ -20,4 +20,16 @@ export class UtilsService {
       .put(`//${environment.apiUrl}/cifrado`, form)
       .pipe(map(response => response));
   }
+
+  sign(form: FormData) {
+    return this.http
+      .post(`//${environment.apiUrl}/firma/firmar`, form)
+      .pipe(map(response => response));
+  }
+
+  verify(form: FormData) {
+    return this.http
+      .put(`//${environment.apiUrl}/firma/validar`, form)
+      .pipe(map(response => response));
+  }
 }

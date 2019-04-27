@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './shared/http-interceptors/auth.interceptor';
 import { AuthService } from './shared/services/auth.service';
 import { UtilsService } from './shared/services/utils.service';
+import { SignComponent } from './features/signature/sign/sign.component';
+import { VerifyComponent } from './features/signature/verify/verify.component';
 
 const jwtModuleOptions = {
   config: {
@@ -36,6 +38,8 @@ const jwtModuleOptions = {
     UsersComponent,
     CypherComponent,
     SignatureComponent,
+    SignComponent,
+    VerifyComponent,
   ],
   imports: [
     BrowserModule,
