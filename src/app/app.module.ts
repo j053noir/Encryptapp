@@ -19,11 +19,9 @@ import { AuthInterceptor } from './shared/http-interceptors/auth.interceptor';
 import { AuthService } from './shared/services/auth.service';
 import { UtilsService } from './shared/services/utils.service';
 
-const jwtModuleOptions = {
-  config: {
-    tokenGetter: () => localStorage.getItem(environment.tokenName),
-  },
-};
+export function jwtTokenGetter() {
+  return localStorage.getItem(environment.tokenName);
+}
 
 @NgModule({
   declarations: [
@@ -41,7 +39,11 @@ const jwtModuleOptions = {
     BrowserModule,
     AppRoutingModule,
     MDBBootstrapModule.forRoot(),
-    JwtModule.forRoot(jwtModuleOptions),
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: jwtTokenGetter
+      }
+    }),
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
