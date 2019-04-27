@@ -15,6 +15,7 @@ import { HeaderComponent } from './home/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './shared/http-interceptors/auth.interceptor';
 import { AuthService } from './shared/services/auth.service';
+import { UtilsService } from './shared/services/utils.service';
 
 const jwtModuleOptions = {
   config: {
@@ -44,6 +45,7 @@ const jwtModuleOptions = {
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     AuthService,
+    UtilsService,
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA],
