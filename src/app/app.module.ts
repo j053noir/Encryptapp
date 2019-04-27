@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CypherComponent } from './features/cypher/cypher.component';
+import { SignatureComponent } from './features/signature/signature.component';
 import { UsersComponent } from './features/users/users.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HeaderComponent } from './home/header/header.component';
@@ -34,6 +35,7 @@ const jwtModuleOptions = {
     DashboardComponent,
     UsersComponent,
     CypherComponent,
+    SignatureComponent,
   ],
   imports: [
     BrowserModule,

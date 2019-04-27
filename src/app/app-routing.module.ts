@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { CypherComponent } from './features/cypher/cypher.component';
+import { SignatureComponent } from './features/signature/signature.component';
 import { UsersComponent } from './features/users/users.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'users', component: UsersComponent },
       { path: 'cypher', component: CypherComponent },
+      { path: 'signature', component: SignatureComponent },
       { path: '', component: DashboardComponent, pathMatch: 'full' },
     ],
   },
