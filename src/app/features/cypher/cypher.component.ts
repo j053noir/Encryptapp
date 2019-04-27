@@ -17,12 +17,14 @@ export class CypherComponent implements OnInit {
 
   cypherUpSubscription: Subscription;
 
+  fileName = 'Cargar archivo...';
+
   constructor(private utilsService: UtilsService) {}
 
   ngOnInit() {
     this.cypherForm = new FormGroup({
       password: new FormControl('', Validators.required),
-      file: new FormControl(null, Validators.required),
+      file: new FormControl(null, Validators.required)
     });
 
     this.form = new FormData();
@@ -30,8 +32,11 @@ export class CypherComponent implements OnInit {
 
   onFileChange(event: any) {
     if (event.target.files.length > 0) {
-      const file = event.target.files[0];
-      this.form.append('archivo', file, file.filename);
+      const file: File = event.target.files[0];
+      this.form.append('archivo', file, file.name);
+      this.fileName = file.name;
+    } else {
+      this.fileName = 'Cargar archivo...';
     }
   }
 
@@ -87,5 +92,6 @@ export class CypherComponent implements OnInit {
     );
 
     this.form = new FormData();
+    this.fileName = 'Cargar archivo...';
   }
 }
