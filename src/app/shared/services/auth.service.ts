@@ -105,4 +105,10 @@ export class AuthService {
         })
       );
   }
+
+  getUsers() {
+    return this.http
+      .get(`//${environment.apiUrl}/registro`)
+      .pipe(response => response);
+  }
 }
