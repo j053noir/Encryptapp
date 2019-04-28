@@ -1,0 +1,43 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo">
+  <!-- Navbar brand -->
+  <mdb-navbar-brand
+    ><a class="navbar-brand" routerLink="/">Encryptapp</a></mdb-navbar-brand
+  >
+
+  <!-- Collapsible content -->
+  <links>
+    <!-- Links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/users" class="nav-link waves-light" mdbWavesEffect
+          >Usuarios</a
+        >
+      </li>
+      <li class="nav-item">
+        <a routerLink="/cypher" class="nav-link waves-light" mdbWavesEffect>Cifrado AES</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/signature" class="nav-link waves-light" mdbWavesEffect>Firma</a>
+      </li>
+    </ul>
+    <!-- Links -->
+
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <li class="nav-item">
+        <a class="nav-link">
+          <div class="btn-group" mdbDropdown>
+            <a mdbDropdownToggle
+              ><i class="fa fa-user" aria-hidden="true"></i
+            ></a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+              <a class="dropdown-item" (click)="onSignOut()">Cerrar Sesión</a>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->
